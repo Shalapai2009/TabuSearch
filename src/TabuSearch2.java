@@ -30,8 +30,7 @@ public class TabuSearch2 {
     }
 
     // Define the Tabu Search algorithm
-    public static List<Integer> tabuSearch(List<Integer> initialSolution,
-                                           int maxIterations, int tabuListSize) {
+    public static List<Integer> tabuSearch(List<Integer> initialSolution, int maxIterations, int tabuListSize) {
         List<Integer> bestSolution = new ArrayList<>(initialSolution);
         List<Integer> currentSolution = new ArrayList<>(initialSolution);
         List<List<Integer>> tabuList = new ArrayList<>();
@@ -80,8 +79,7 @@ public class TabuSearch2 {
         int maxIterations = 100;
         int tabuListSize = 10;
 
-        List<Integer> bestSolution =
-                tabuSearch(initialSolution, maxIterations, tabuListSize);
+        List<Integer> bestSolution = tabuSearch(initialSolution, maxIterations, tabuListSize);
         System.out.print("Best solution:");
         for (int val : bestSolution) {
             System.out.print(" " + val);
