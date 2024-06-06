@@ -6,23 +6,17 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        //int RandomRib = (int) (Math.random() * (10));
-
         List<Cargo> cargos = new ArrayList<>();
-        for (int i = 0; i < 100 ; i++) {
+        for (int i = 0; i < 10 ; i++) {
             cargos.add(new Cargo(1 + (int) (Math.random() * (10))));
         }
+        int maxIterations = 100;
+        int tabuListSize = 10;
 
-        TabuSearch tabuSearch1 = new TabuSearch(cargos);
-        //tabuSearch1.fullTrucks();
-        tabuSearch1.createListTrucks(1000);
-        //TabuSearch tabuSearch2 = new TabuSearch(cargos);
-        //tabuSearch2.fullTrucks();
-        //tabuSearch2.listTrucks(10);
-        //TabuSearch tabuSearch3 = new TabuSearch(cargos);
-        //tabuSearch3.fullTrucks();
-       // tabuSearch3.listTrucks(10);
-       // cargos[0] = new Cargo((int) (Math.random() * (10)));
+        List<Cargo> bestSolution = new TabuSearch(cargos,maxIterations,tabuListSize).tabuSearch();
+        for (Cargo cargo: bestSolution) {
+            System.out.println(cargo.getWeight());
+        }
         System.out.println("byaka");
     }
 }

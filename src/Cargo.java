@@ -1,5 +1,5 @@
 public class Cargo {
-    private int weight = 0;
+    private int weight;
     public Cargo(int weight) {
         this.weight = weight;
     }
